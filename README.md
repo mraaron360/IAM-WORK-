@@ -325,25 +325,3 @@ gh repo edit mraaron360/SCIM-microservice --add-topic iam --add-topic scim --add
 
 ## 11) Quick commit/push snippet per repo
 
-```bash
-# from the repo root
-mkdir -p .github/workflows tests docs/img
-
-# add CI + placeholder test + docs
-printf "%s" "<PASTE THE YAML FROM SECTION 3 HERE>" > .github/workflows/ci.yml
-printf "%s" "def test_sanity():\n    assert True\n" > tests/test_placeholder.py
-
-# add README + policies
-# (open README.md and paste the template from Section 2, tailored)
-
-printf "%s" "# Security Policy\n\n## Supported Versions\nSecurity fixes are provided on main.\n\n## Reporting a Vulnerability\nEmail Aaron.Agyapong@icloud.com with details." > SECURITY.md
-
-printf "%s" "# Contributing\n\n1. Fork and create a feature branch from main.\n2. Add tests in tests/.\n3. Run pytest locally.\n4. Open a PR with context." > CONTRIBUTING.md
-
-printf "%s" "MIT License\n\nCopyright (c) 2025 Aaron Agyapong\n\nPermission is hereby granted, free of charge, to any person obtaining a copy ..." > LICENSE
-
-# commit and push
-git add .
-git commit -m "docs: add README + CI + baseline tests + security & contributing"
-git push origin HEAD
-```
